@@ -1,0 +1,27 @@
+<div class="mt-4">
+  <h1 class="mb-5 text-center"><span>Login</span> Form</h1>
+  <h2 *ngIf="message" class="text-danger text-center"> {{ message }}</h2>
+  <div *ngIf="invalidLogin">Invalid email or password. Please try again.</div>
+  <div class="formContainer mx-auto">
+    <form [formGroup]="loginForm" (ngSubmit)="logIn()">
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input formControlName="email" type="email" id="email" name="email" class="form-control">
+        <span *ngIf="loginForm.controls['email'].hasError('required')
+          && loginForm.controls['email'].touched">Please enter your email</span>
+          <span *ngIf="loginForm.controls['email'].hasError('pattern')
+          && loginForm.controls['email'].touched">Please enter a valid email</span>
+
+      </div>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input formControlName="password" type="password" id="password" name="password" class="form-control">
+        <span class="text-danger" *ngIf="loginForm.controls['password'].hasError('required')
+            && loginForm.controls['password'].touched">Please enter your password</span>
+      </div>
+      <div class="form-group mt-4">
+        <button type="submit" [disabled]="loginForm.invalid">Sign in</button>
+      </div>
+    </form>
+  </div>
+</div>

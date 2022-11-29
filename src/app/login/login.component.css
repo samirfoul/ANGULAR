@@ -1,0 +1,40 @@
+h1 {
+  color : #C9E6FF;
+}
+
+h1 span {
+  color: #5290cd;
+}
+
+.formContainer {
+background: #f9feff;
+padding: 1em;
+width: 50%;
+}
+
+input,
+textarea {
+border: 1px solid #c9e6ff !important;
+}
+
+input:focus,
+textarea:focus {
+border: 1px solid #1d5388 !important;
+}
+
+button {
+width: 100%;
+padding: 0.7em !important;
+background-color: #73a2ac !important;
+border: 0 !important;
+text-transform: uppercase;
+border-radius: 5px;
+}
+
+button:hover,
+button:focus {
+background-color: #1a1faf !important;
+color: #fff;
+outline: 0 !important;
+transition: background-color 2s ease-out;
+}
